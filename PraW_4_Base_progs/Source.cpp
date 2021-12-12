@@ -11,11 +11,33 @@
 
 using namespace std;
 
-void main() {
+
+int Ff(int a, int b) {
+	int delAB(0), c;
+
+	if (a > b) c = a;
+	if (a <= b) c = b;
+	
+	for (int i = 1; i < c; i++) {
+		if ((a % i == 0) && (b % i == 0)) {
+			delAB = i;
+		}
+	}
+	return delAB;
+}
+
+int main() {
 	setlocale(LC_ALL, "rus");
 	SetConsoleOutputCP(1251);
 	SetConsoleCP(1251);
 	/*Написать функцию, которая возвращает наибольший общий делитель двух целых чисел.*/
-	
+	int res, a, b;
 
+	cout << "Enter a: ";
+	cin >> a;
+	cout << endl << "Enter b: ";
+	cin >> b;
+
+	res = Ff(a, b);
+	cout << endl << "The greatest common divisor of a and b: " << res << endl;
 }
